@@ -1,0 +1,187 @@
+.section-cards .image-container .img{
+  max-width: 1400px;
+}
+
+.section-components .table-img{
+  box-shadow: none;
+  left: 15%;
+    top: 36%;
+    height: 175px;
+    border-radius: 2px;
+}
+
+.section-components .ecomm-2{
+  left: 3%;
+  top: 7%;
+  height: 100px;
+}
+.section-components .ecomm-3{
+  left: 70%;
+  top: 50%;
+  height: 250px;
+  border-radius: 2px;
+}
+
+.section-components .description{
+    margin-top: 35px;
+}
+
+.section-components .image-container{
+    height: 560px;
+    position: relative;
+}
+
+.section-components .components-phone{
+    width: auto;
+    left: 145px;
+    top: 0;
+    position: absolute;
+}
+
+.section-components  .ecomm-3{
+  left: 55%;
+  top: 75%;
+  height: 35px;
+  border-radius: 2px;
+}
+
+.section-components .ecomm-2{
+    left: 3%;
+    top: 7%;
+    height: 60px;
+    border-radius: 5px;
+
+}
+
+.section-free-demo .icon-github{
+  font-size: 82px;
+}
+
+
+@media (max-width: 576px){
+  .section-components .components-phone{
+    left: 100px !important;
+  }
+}
+@media (max-width:767px){
+
+  .table-img{
+    max-width: 190px;
+    max-height: 60px;
+  }
+
+
+  .section-components .image-container {
+    height: 300px;
+  }
+
+
+  .components-phone{
+    max-width: 400px;
+    max-height: 240px;
+    left: 0px;
+  }
+
+}
+
+
+@media (max-width:991px) and (min-width:768px){
+  .components-phone{
+    max-width: 700px;
+    max-height: 440px;
+    left: 0px;
+  }
+}
+
+@media (max-width:991px){
+
+  .section-cards .image-container img{
+    max-width: 800px;
+  }
+
+  .section-cards .image-container {
+    margin-top: -120px;
+    margin-left: -800px;
+  }
+
+  .section-components .components-phone{
+    left: 200px;
+  }
+
+  .section-components .ecomm-3{
+    left: 50%;
+  }
+
+  .section-components .ecomm-2{
+    left: 13%;
+  }
+
+  .section-components .table-img{
+    left: 22%;
+  }
+
+}
+
+@media (max-width: 768px){
+  .section-components .components-phone {
+    left: 170px;
+  }
+
+  .section-components .ecomm-2{
+    height: 70px;
+  }
+
+  .section-components .ecomm-3{
+    width: 120px;
+    height: 20px;
+  }
+
+}
+
+/*  animated images  */
+
+@-webkit-keyframes Floatingy{
+    from {-webkit-transform:translate(0, 0px);}
+    65% {-webkit-transform:translate(50px, 0);}
+    to {-webkit-transform: translate(0, -0px);}
+}
+@-moz-keyframes Floatingy{
+    from {-moz-transform:translate(0, 0px);}
+    65% {-moz-transform:translate(50px, 0);}
+    to {-moz-transform: translate(0, -0px);}
+}
+@-webkit-keyframes Floatingx{
+    from {-webkit-transform:translate(50px, 0px);}
+    65% {-webkit-transform:translate(0, 0);}
+    to {-webkit-transform: translate(50px, -0px);}
+}
+@-moz-keyframes Floatingx{
+    from {-moz-transform:translate(50px, 0px);}
+    65% {-moz-transform:translate(0, 0);}
+    to {-moz-transform: translate(50px, -0px);}
+}
+
+
+.table-img{
+    -webkit-animation-duration: 14s;
+    -moz-animation-duration: 14s;
+    -webkit-animation-name: Floatingx;
+    -moz-animation-name: Floatingx;
+     animation-iteration-count: infinite;
+}
+
+.ecomm-3{
+    -webkit-animation-duration: 10s;
+    -moz-animation-duration: 10s;
+    -webkit-animation-name: Floatingx;
+    -moz-animation-name: Floatingx;
+     animation-iteration-count: infinite;
+}
+
+.ecomm-2{
+   -webkit-animation-duration: 11s;
+   -moz-animation-duration: 11s;
+   -webkit-animation-name: Floatingx;
+   -moz-animation-name: Floatingx;
+    animation-iteration-count: infinite;
+}
