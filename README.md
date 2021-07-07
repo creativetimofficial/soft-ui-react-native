@@ -1,30 +1,79 @@
-# Introduction
-
-Soft UI Pro React Native is a premium mobile UI template built with Google's React-Native allowing you to create powerful and beautiful mobile applications. 
-
-Using the mobile application is very simple but it does require you to understand basic React functions and React Native also to work with React Native, you will need to have an understanding of JavaScript fundamentals.  
-
-## Getting Started
-* Getting started: [https://reactnative.dev/docs/getting-started](https://reactnative.dev/docs/getting-started)
-* React Fundamentals: [https://reactnative.dev/docs/intro-react](https://reactnative.dev/docs/intro-react)
-
-## Installation
-
-Once you've downloaded the product from our website you should unzip the folder. The next step is for you to open up your terminal and go directly to the newly created folder called `soft-ui-react-native-vX.Y` (x and y are numbers indicating the version number). Once you're there run `npm install` or `yarn install` and then `expo start` to start the project.
-
-* **Running on Simulator**:
-If you are using a simulator or emulator, you may find the following Expo CLI keyboard shortcuts to be useful:
-- Pressing **i** will open in an [iOS simulator](https://docs.expo.io/workflow/ios-simulator/).
-- Pressing **a** will open in an [Android emulator or connected device](https://docs.expo.io/workflow/android-studio-emulator/).
-- Pressing **w** will open in your browser. Expo supports all major browsers.
+# [Soft UI React Native](https://demos.creative-tim.com/soft-ui-react-native/index.html) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/home?status=soft-ui%20React%20Native,%20a%20cool%20NowUI%20React%20Native%20App%20Template%20%E2%9D%A4%EF%B8%8F%20https%3A//bit.ly/2KAj86H%20%23reactnative%20%23NowUI%20%23designsystem%20%23developers%20via%20%40CreativeTim)
 
 
-# Guide
+ ![version](https://img.shields.io/badge/version-1.0.0-blue.svg)  [![GitHub issues open](https://img.shields.io/github/issues/creativetimofficial/ct-soft-ui-react-native.svg?style=flat)](https://github.com/creativetimofficial/ct-soft-ui-react-native/issues?q=is%3Aopen+is%3Aissue) [![GitHub issues closed](https://img.shields.io/github/issues-closed-raw/creativetimofficial/ct-soft-ui-react-native.svg?maxAge=2592000)](https://github.com/creativetimofficial/ct-soft-ui-react-native/issues?q=is%3Aissue+is%3Aclosed)
 
-## Directory Structure
+
+![Product](https://s3.amazonaws.com/creativetim_bucket/products/490/original/opt_soft_ui_react_native_thumbnail.jpg)
+
+Soft UI React Native is a fully coded app template built over [React Native](https://facebook.github.io/react-native/?ref=creativetim) and [Expo](https://expo.io/?ref=creativetim) to allow you to create powerful and beautiful e-commerce mobile applications. We have redesigned all the usual components in-house to make it look like Soft UI's KIT, minimalistic and easy to use.
+
+Start your development with a badass Design System for React Native inspired by Soft UI KIT. If you like Soft UI's KIT, you will love this react native app template! It features a huge number of components and screens built to fit together and look amazing.
+
+### FULLY CODED COMPONENTS
+
+Soft UI React Native features over 100 variations of components like buttons, inputs, cards, navigations etc, giving you the freedom of choosing and combining. All components can take variations in colour, that you can easily modify inside our theme file.
+
+You will save a lot of time going from prototyping to full-functional code, because all elements are implemented. We wanted the design process to be seamless, so switching from image to the real page is very easy to do.
+
+### Components & Cards
+Soft UI React Native comes packed with a large number of components and cards. Putting together a mobile app has never been easier than matching together different components. From the profile screen to a settings screen, you can easily customise and build your screens. We have created multiple options for you to put together and customise into pixel perfect screens.
+
+View [all components here](https://demos.creative-tim.com/soft-ui-react-native/).
+
+### Example Screens
+If you want to get inspiration or just show something directly to your clients, you can jump start your development with our pre-built example screens. From onboarding screens to profile or discover screens, you will be able to quickly set up the basic structure for your React Native mobile project.
+
+View [all screens here](https://demos.creative-tim.com/soft-ui-react-native/#screens).
+
+
+Let us know your thoughts below. And good luck with development!
+
+
+## Table of Contents
+
+* [Versions](#versions)
+* [Demo](#demo)
+* [Quick Start](#quick-start)
+* [Documentation](#documentation)
+* [File Structure](#file-structure)
+* [OS Support](#os-support)
+* [Resources](#resources)
+* [Reporting Issues](#reporting-issues)
+* [Technical Support or Questions](#technical-support-or-questions)
+* [Licensing](#licensing)
+* [Useful Links](#useful-links)
+
+## Versions
+
+[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/html-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/soft-ui-kit-pro)[<img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/react-native-logo.jpg?raw=true" width="60" height="60" />](https://www.creative-tim.com/product/soft-ui-react-native)
+
+| HTML | React-Native  |
+| --- | --- |
+| [![Soft UI Kit](https://s3.amazonaws.com/creativetim_bucket/products/448/original/opt_sds_free_thumbnail.jpg?1614876201)](https://www.creative-tim.com/product/soft-ui-design-system)  | [![Soft UI React-Native](https://s3.amazonaws.com/creativetim_bucket/products/490/original/opt_soft_ui_react_native_thumbnail.jpg?1625576346)](https://www.creative-tim.com/product/soft-ui-react-native) |
+
+## Demo
+- [Start page](https://demos.creative-tim.com/soft-ui-react-native)
+- [Quick start](https://www.creative-tim.com/learning-lab/react-native/quick-start/soft)
+
+[View more](https://demos.creative-tim.com/soft-ui-react-native)
+
+## Quick start
+- Try it out on Expo (Simulator for iOS or even your physical device if you have an Android)
+- Download from [Creative Tim](https://www.creative-tim.com/product/soft-ui-react-native)
+
+
+## Documentation
+The documentation for the Soft UI React Native is hosted at our [website](https://www.creative-tim.com/learning-lab/react-native/overview/soft).
+
+
+## File Structure
+Within the download you'll find the following directories and files:
+
 ```
-.
+soft-ui-react-native/
 ├── App.tsx
+├── README.md
 ├── app.json
 ├── assets
 ├── babel.config.js
@@ -38,7 +87,6 @@ If you are using a simulator or emulator, you may find the following Expo CLI ke
 │   │   ├── Article.tsx
 │   │   ├── Block.tsx
 │   │   ├── Button.tsx
-│   │   ├── Calendar.tsx
 │   │   ├── Checkbox.tsx
 │   │   ├── Image.tsx
 │   │   ├── Input.tsx
@@ -48,7 +96,6 @@ If you are using a simulator or emulator, you may find the following Expo CLI ke
 │   │   ├── Text.tsx
 │   │   └── index.tsx
 │   ├── constants
-│   │   ├── dark.ts
 │   │   ├── index.ts
 │   │   ├── light.ts
 │   │   ├── mocks.ts
@@ -56,7 +103,6 @@ If you are using a simulator or emulator, you may find the following Expo CLI ke
 │   │   ├── theme.ts
 │   │   ├── translations
 │   │   │   ├── en.json
-│   │   │   ├── fr.json
 │   │   │   └── index.ts
 │   │   └── types
 │   │       ├── components.ts
@@ -73,291 +119,67 @@ If you are using a simulator or emulator, you may find the following Expo CLI ke
 │   │   ├── Menu.tsx
 │   │   └── Screens.tsx
 │   └── screens
-│       ├── About.tsx
-│       ├── Agreement.tsx
 │       ├── Articles.tsx
-│       ├── Booking.tsx
-│       ├── Chat.tsx
 │       ├── Components.tsx
-│       ├── Extras.tsx
 │       ├── Home.tsx
-│       ├── Login.tsx
-│       ├── Notifications.tsx
-│       ├── NotificationsSettings.tsx
-│       ├── Privacy.tsx
+│       ├── Pro.tsx
 │       ├── Profile.tsx
 │       ├── Register.tsx
-│       ├── Rental.tsx
-│       ├── Rentals.tsx
-│       ├── Settings.tsx
-│       ├── Shopping.tsx
 │       └── index.ts
 └── tsconfig.json
 ```
 
-#### Constants
 
-This folder contains all constants we're using throughout our React-Native cross-platform app. 
+## OS Support
 
-#### Screens
+At present, we officially aim to support the last two versions of the following operating systems:
 
-Contains all screens created for Soft UI Pro React-Native. 
+[<img src="https://raw.githubusercontent.com/creativetimofficial/ct-material-kit-pro-react-native/master/assets/android-logo.png" width="60" height="60" />](https://www.creative-tim.com/product/soft-ui-react-native)[<img src="https://raw.githubusercontent.com/creativetimofficial/ct-material-kit-pro-react-native/master/assets/apple-logo.png" width="60" height="60" />](https://www.creative-tim.com/product/soft-ui-react-native)
 
-#### Components
+## Resources
+- Demo: <https://demos.creative-tim.com/soft-ui-react-native>
+- Download Page: <https://www.creative-tim.com/product/soft-ui-react-native>
+- Documentation: <https://www.creative-tim.com/learning-lab/react-native/overview/soft>
+- License Agreement: <https://www.creative-tim.com/license>
+- Support: <https://www.creative-tim.com/contact-us>
+- Issues: [Github Issues Page](https://github.com/creativetimofficial/ct-soft-ui-react-native/issues)
+- [Soft UI Design System](https://www.creative-tim.com/product/soft-ui-design-system?ref=soft-uiprn-readme) - For Front End Development
 
-Components ready to be used and transform however you'd like.
+## Reporting Issues
 
-## Customize
+We use GitHub Issues as the official bug tracker for the Soft UI React Native. Here are some advices for our users that want to report an issue:
 
-Customizing the App will be really easy for you. This is due to the fact we provided you well prepared code. This makes it simple to be able to dig through the code and hence without problems regarding customization. 
-
-You want to change a color thtought the whole app? Just go to the `light.ts` or `dark.ts` and modify any color or even add one yourself.
-
-## Adding Screens
-
-Adding screens is really easy, all you have to do is go to the `navigation` directory and edit the `Screens.tsx` file. If you want to add/edit a new screen checkout the existing example from `Stack.Navigator`
-
-If you want to add it inside the Drawer menu under the `src/navigation/Menu.tsx` file, all you have to do is go there and you'll find the `screens` object list. Next in line should be your own route, for example you could write something like this: 
-
-```
-{name: 'Your Screen', to: 'YourScreen', icon: YourScreenIcon}
-```
-
-# Components
-
-A list explaining all components and the parameters they're receiving. 
+1. Make sure that you are using the latest version of the Soft UI React Native.
+2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
+3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
 
 
-## Block
-Default example: 
-```
-<Block>...</Block>
-```
+### Technical Support or Questions
 
-Card example: 
-```
-<Block card>...</Block>
-```
-#### Properties
+If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us) instead of opening an issue.
 
-| Property | Type | Default | Description |
-| :---------: | :--------: | :---------: | :--------- |
-| id | string | 'Block' | id for testID & accesibilityLabel | 
-| flex | ViewStyle['flex'] | 1 | Renders a View flex style |
-| row | boolean | false | Renders a View flexDirection: row style |
-| wrap | ViewStyle['flexWrap'] | undefined | Renders a View flexWrap style |
-| safe | boolean | false | Renders a SafeAreaView component |
-| keyboard | boolean | false | Renders a KeyboardAwareScrollView component |
-| scroll | boolean | false | Renders a ScrollView component |
-| shadow | boolean | false | Generates a shadow style |
-| card | boolean | false | Renders a View with predefined backgroundColor, borderRadius, padding, shadow / elevation |
-| center | boolean | false | Renders a View with predefined justifyContent: center |
-| outlined | boolean | false | Renders a View with predefined borderWidth: 1, backgroundColor: 'transparent' & borderColor inherited |
-| style | StyleProp<ViewStyle> | undefined | Custom View style |
-| overflow | ViewStyle['overflow'] | undefined | Renders a View style overflow |
-| color | ViewStyle['backgroundColor'] | undefined | Renders a custom backgroundColor |
-| gradient | string[] | undefined | Renders LinearGradient component, colors |
-| primary | boolean | false | Renders a backgroundColor directly from the colors.primary value |
-| secondary | boolean | false | Renders a backgroundColor directly from the colors.secondary value |
-| tertiary | boolean | false | Renders a backgroundColor directly from the colors.tertiary value |
-| black | boolean | false | Renders a backgroundColor directly from the colors.black value |
-| white | boolean | false | Renders a backgroundColor directly from the colors.white value |
-| gray | boolean | false | Renders a backgroundColor directly from the colors.gray value |
-| danger | boolean | false | Renders a backgroundColor directly from the colors.danger value |
-| warning | boolean | false | Renders a backgroundColor directly from the colors.warning value |
-| success | boolean | false | Renders a backgroundColor directly from the colors.success value |
-| info | boolean | false | Renders a backgroundColor directly from the colors.info value |
-| radius | ViewStyle['borderRadius'] | undefined | Renders a custom borderRadius value |
-| height | ViewStyle['height'] | undefined | Renders a custom height value |
-| width | ViewStyle['width'] | undefined | Renders a custom width value |
-| justify | ViewStyle['justifyContent'] | undefined | Renders a flex justifyContent. Available values: 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly' |
-| align | ViewStyle['alignItems'] | undefined | Renders a flex alignItems. Available values: 'auto', 'flex-start', 'flex-end', 'center', 'stretch', 'baseline' |
-| children | React.ReactNode | undefined | Renders the View content |
-| blur | boolean | false | Renders a BlueView component |
-| intensity | BlurProps['intensity'] | undefined | BlueView intensity, default: 50, values accepted: 1 to 100 |
-| tint | BlurProps['tint'] | undefined | BlueView tint color, default: 'default', values accepted: 'light', 'dark', 'default' |
-| position | ViewStyle['position'] | undefined | Renders the View position |
-| right | ViewStyle['right'] | undefined | Renders the View right offset |
-| left | ViewStyle['left'] | undefined | Renders the View left offset |
-| top | ViewStyle['top'] | undefined | Renders the View top offset |
-| bottom | ViewStyle['bottom'] | undefined | Renders the View bottom offset |
-| end | LinearGradientPoint | undefined | Renders LinearGradient end points |
-| start | LinearGradientPoint | undefined | Renders LinearGradient start points |
 
-## Button
-Default usage: 
-```
-<Button>...</Button>
-```
-#### Properties
+## Licensing
 
-| Property | Type | Default | Description |
-| :---------: | :--------: | :---------: | :--------- |
-| id | string | 'Button' | id for testID & accesibilityLabel | 
-| children | React.ReactNode | undefined | Renders Button content |
-| round | boolean | false | Renders borderRadius value to maxSize / 2 using, maxSize value is calculated from the maximum value from width, minWidth, maxWidth, height, minHeight, maxHeight |
-| rounded | boolean | false | Renders borderRadius value using theme sizes.s; default sizes.buttonRadius |
-| flex | ViewStyle['flex'] | undefined | Renders a View flex style |
-| radius | ViewStyle['borderRadius'] | undefined | Renders a custom borderRadius value |
-| color | ViewStyle['backgroundColor'] | undefined | Renders a custom backgroundColor value |
-| gradient | string[] | undefined | Renders LinearGradient component, colors |
-| primary | boolean | false | Renders a backgroundColor directly from the colors.primary value |
-| secondary | boolean | false | Renders a backgroundColor directly from the colors.secondary value |
-| tertiary | boolean | false | Renders a backgroundColor directly from the colors.tertiary value |
-| gray | boolean | false | Renders a backgroundColor directly from the colors.gray value |
-| black | boolean | false | Renders a backgroundColor directly from the colors.black value |
-| white | boolean | false | Renders a backgroundColor directly from the colors.white value |
-| light | boolean | false | Renders a backgroundColor directly from the colors.light value |
-| dark | boolean | false | Renders a backgroundColor directly from the colors.dark value |
-| danger | boolean | false | Renders a backgroundColor directly from the colors.danger value |
-| warning | boolean | false | Renders a backgroundColor directly from the colors.warning value |
-| success | boolean | false | Renders a backgroundColor directly from the colors.success value |
-| info | boolean | false | Renders a backgroundColor directly from the colors.info value |
-| row | boolean | false | Renders a View flexDirection: row style |
-| align | ViewStyle['alignItems'] | undefined | Renders a flex alignItems. Available values: 'auto', 'flex-start', 'flex-end', 'center', 'stretch', 'baseline' |
-| justify | ViewStyle['justifyContent'] | undefined | Renders a flex justifyContent. Available values: 'flex-start', 'flex-end', 'center', 'space-between', 'space-around', 'space-evenly' |
-| height | ViewStyle['height'] | undefined | Renders a custom height value |
-| width | ViewStyle['width'] | undefined | Renders a custom width value |
-| outlined | boolean | false | Renders the container style with predefined borderWidth: 1, backgroundColor: 'transparent' & borderColor inherited |
-| shadow | boolean | false | Generates a shadow style  |
-| social | **facebook**, **twitter**, **dribbble** | undefined | Renders social icons ('logo-facebook', 'logo-twitter', 'logo-dribbble') from Ionicons |
-| position | ViewStyle['position'] | undefined | Renders the View position |
-| right | ViewStyle['right'] | undefined | Renders the View right offset |
-| left | ViewStyle['left'] | undefined | Renders the View left offset |
-| top | ViewStyle['top'] | undefined | Renders the View top offset |
-| bottom | ViewStyle['bottom'] | undefined | Renders the View bottom offset |
-| haptic | boolean | false | Provides haptic feedback on touch - Haptics.selectionAsync() |
-| vibrate | number, number[], null | undefined | Adds vibration feedback on touch using Vibration.vibrate pattern |
-| vibrateRepeat | boolean | false | Repeat vibration pattern |
+- Copyright 2021 Creative Tim (https://www.creative-tim.com/)
+- Creative Tim [license](https://www.creative-tim.com/license)
 
-## Image
-Default usage: 
-```
-<Image source={...} />
-```
-#### Properties
+## Useful Links
 
-| Property | Type | Default | Description |
-| :---------: | :--------: | :---------: | :--------- |
-| id | string | 'Image' | id for testID & accesibilityLabel |
-| avatar | boolean | false | Avatar sizing: borderRadius from Math.min(height, weight), sets the width & height to Math.min(height, weight) |
-| shadow | boolean | false | Generates a shadow style  |
-| background | boolean | false | Renders an ImageBackground component |
-| rounded | boolean | false | Renders a predefined theme sizes.borderRadius & overflow: 'hidden' |
-| radius | ImageStyle['borderRadius'] | undefined | Renders a custom borderRadius value |
-| color | ImageStyle['tintColor'] | undefined | Changes the color of all the non-transparent pixels to the tintColor. |
-| transform | ImageStyle['transform'] | undefined | Modify the appearance and position of your components using 2D or 3D transformations |
-| style | StyleProp<ImageStyle> | undefined | Custom Image style |
-| children | React.ReactNode | undefined | Renders the ImageBackground content |
+- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
+- [Affiliate Program](https://www.creative-tim.com/affiliates/new) (earn money)
+- [Blog Creative Tim](http://blog.creative-tim.com/)
+- [Free Products](https://www.creative-tim.com/bootstrap-themes/free) from Creative Tim
+- [Premium Products](https://www.creative-tim.com/bootstrap-themes/premium) from Creative Tim
+- [React Products](https://www.creative-tim.com/bootstrap-themes/react-themes) from Creative Tim
+- [Angular Products](https://www.creative-tim.com/bootstrap-themes/angular-themes) from Creative Tim
+- [VueJS Products](https://www.creative-tim.com/bootstrap-themes/vuejs-themes) from Creative Tim
+- [More products](https://www.creative-tim.com/bootstrap-themes) from Creative Tim
+- Check our Bundles [here](https://www.creative-tim.com/bundles?ref=soft-ui-github-readme)
 
-## Input
-Default usage: 
-```
-<Input />
-```
-#### Properties
 
-| Property | Type | Default | Description |
-| :---------: | :--------: | :---------: | :--------- |
-| id | string | 'Input' | id for testID & accesibilityLabel | 
-| children | React.ReactNode | undefined | Renders the TextInput content |
-| style | TextStyle | undefined | Renders the TextInput style |
-| color | ColorValue | undefined | Renders a custom borderColor & placeholderTextColor |
-| primary | boolean | false | Renders a borderColor & placeholderTextColor directly from the colors.primary value |
-| secondary | boolean | false | Renders a borderColor & placeholderTextColor directly from the colors.secondary value |
-| tertiary | boolean | false | Renders a borderColor & placeholderTextColor directly from the colors.tertiary value |
-| black | boolean | false | Renders a borderColor & placeholderTextColor directly from the colors.black value |
-| white | boolean | false | Renders a borderColor & placeholderTextColor directly from the colors.white value |
-| gray | boolean | false | Renders a borderColor & placeholderTextColor directly from the colors.gray value |
-| danger | boolean | false | Renders a right side danger icon for invalid input value. Renders a borderColor & placeholderTextColor directly from the colors.warning value |
-| warning | boolean | false | Renders a borderColor & placeholderTextColor directly from the colors.success value |
-| success | boolean | false | Renders a right side success icon for valid input value. Renders a borderColor & placeholderTextColor directly from the colors.info value |
-| info | boolean | false | Renders a right side success icon for valid input value.Renders a borderColor & placeholderTextColor directly from the colors.info value |
-| search | boolean | false | Renders a right side search icon |
-| disabled | boolean | false | Renders a disabled / non-editable TextInput |
-| label | string | undefined | Renders the label top text |
-| icon | keyof ITheme['assets'] | undefined | Renders a left side icon image from the Theme assets |
-
-## Switch
-Default usage: 
-```
-<Switch />
-```
-#### Properties
-
-| Property | Type | Default | Description |
-| :---------: | :--------: | :---------: | :--------- |
-| id | string | 'Switch' | id for testID & accesibilityLabel | 
-| checked | boolean | false | Switch checked value | 
-| style | ViewStyle | undefined | Renders the Switch style | 
-| thumbColor | ColorValue | 'white' | Renders the thumb color value | 
-| activeFillColor | ColorValue | undefined | Renders the switch active thumb backgroundColor value | 
-| inactiveFillColor | ColorValue | undefined | Renders the switch inactive thumb backgroundColor value | 
-| thumbStyle | ViewStyle | undefined | Renders the thumb style | 
-| switchStyle | ViewStyle | undefined | Renders the switch container style | 
-| onPress | (checked: boolean) => void | undefined | Switch onPress callback passing the checked value as params | 
-| haptic | boolean | true | Provides haptic feedback when toggling the switch | 
-| duration | Animated.TimingAnimationConfig['duration'] | 250 | Duration in ms for thumb animated position | 
-
-## Checkbox
-Default usage: 
-```
-<Checkbox />
-```
-#### Properties
-
-| Property | Type | Default | Description |
-| :---------: | :--------: | :---------: | :--------- |
-| id | string | 'Checkbox' | id for testID & accesibilityLabel |
-| checked | boolean | false | Checkbox checked value |
-| haptic | boolean | true | Provides haptic feedback when toggling the checkbox |
-| style | ViewStyle | undefined | Renders the Pressable container style |
-| onPress | (checked: boolean) => void | undefined | Checkbox onPress callback passing the checked value as params |
-
-## Text
-Default usage: 
-```
-<Text>...</Text>
-```
-#### Properties
-
-| Property | Type | Default | Description |
-| :---------: | :--------: | :---------: | :--------- |
-| id | string | 'Text' | id for testID & accesibilityLabel | 
-| children | React.ReactNode | undefined | Renders a Text component to display text. Supports nesting, styling, and touch handling. |
-| style | TextStyle | undefined | Renders the Text component with custom style, overwrite existing/predefined styles |
-| center | boolean | false | Renders a Text with predefined textAlign: center |
-| gradient | string[] | undefined | Renders LinearGradient component, colors |
-| primary | boolean | false | Renders a Text color directly from the colors.primary value |
-| secondary | boolean | false | Renders a Text color directly from the colors.secondary value |
-| tertiary | boolean | false | Renders a Text color directly from the colors.tertiary value |
-| black | boolean | false | Renders a Text color directly from the colors.black value |
-| white | boolean | false | Renders a Text color directly from the colors.white value |
-| gray | boolean | false | Renders a Text color directly from the colors.gray value |
-| danger | boolean | false | Renders a Text color directly from the colors.danger value |
-| warning | boolean | false | Renders a Text color directly from the colors.warning value |
-| success | boolean | false | Renders a Text color directly from the colors.success value |
-| info | boolean | false | Renders a Text color directly from the colors.info value |
-| color | TextStyle['color'] | undefined | Renders a Text custom color value |
-| opacity | TextStyle['opacity'] | undefined | Renders a Text with custom opacity value |
-| size | ITheme['sizes'] | string, number, undefined | Renders a Text with custom fontSize |
-| weight | TextStyle['fontWeight'] | undefined | Renders a Text with custom fontWeight |
-| font | string | undefined | Renders a Text with custom fontFamily |
-| bold | boolean | false | Renders a Text with predefined fontFamily from theme fonts.bold |
-| semibold | boolean | false | Renders a Text with predefined fontFamily from theme fonts.semibold |
-| start | LinearGradientPoint | undefined | Renders LinearGradient start points |
-| end | LinearGradientPoint | undefined | Renders LinearGradient end points |
-| h1 | boolean | false | Renders a Text with predefined fontSize from theme sizes.h1 |
-| h2 | boolean | false | Renders a Text with predefined fontSize from theme sizes.h2 |
-| h3 | boolean | false | Renders a Text with predefined fontSize from theme sizes.h3 |
-| h4 | boolean | false | Renders a Text with predefined fontSize from theme sizes.h4 |
-| h5 | boolean | false | Renders a Text with predefined fontSize from theme sizes.h5 |
-| p | boolean | false | Renders a Text with predefined fontSize from theme sizes.p |
-| align | TextStyle['textAlign'] | undefined | Renders a Text with custom textAlign |
-| transform | TextStyle['textTransform'] | undefined | Renders a Text with custom textTransform: 'none', 'uppercase', 'lowercase', 'capitalize' |
-| lineHeight | TextStyle['lineHeight'] | undefined | Renders a Text with custom lineHeight |
-| right | TextStyle['right'] | undefined | Renders text right offset |
-| left | TextStyle['left'] | undefined | Renders the View left offset |
-| top | TextStyle['top'] | undefined | Renders the View top offset |
-| bottom | TextStyle['bottom'] | undefined | Renders the View bottom offset |
-| position | TextStyle['position'] | undefined | Renders text position |
+### Social Media
+Twitter: <https://twitter.com/CreativeTim>
+Facebook: <https://www.facebook.com/CreativeTim>
+Dribbble: <https://dribbble.com/creativetim>
+Instagram: <https://www.instagram.com/CreativeTimOfficial>
