@@ -8,7 +8,7 @@
 
 Soft UI React Native is a fully coded app template built over [React Native](https://facebook.github.io/react-native/?ref=creativetim) and [Expo](https://expo.io/?ref=creativetim) to allow you to create powerful and beautiful e-commerce mobile applications. We have redesigned all the usual components in-house to make it look like Soft UI's KIT, minimalistic and easy to use.
 
-Start your development with a badass Design System for React Native inspired by Soft UI KIT. If you like Soft UI's KIT, you will love this react native app template! It features a huge number of components and screens built to fit together and look amazing.
+Start your development with a Design System for React Native inspired by Soft UI KIT. If you like Soft UI's KIT, you will love this react native app template! It features a huge number of components and screens built to fit together and look amazing.
 
 ### FULLY CODED COMPONENTS
 
