@@ -63,7 +63,9 @@
     "profile": "Profile",
     "settings": "Settings",
     "register": "Create account",
-    "extra": "Extra - Automotive"
+    "extra": "Extra - Automotive",
+    "login": "Login",
+    "location": "Location"
   },
   "navigation": {
     "home": "Soft UI",
@@ -91,7 +93,10 @@
   "home": {
     "title": "Soft UI",
     "following": "Following",
-    "trending": "Trending"
+    "trending": "Trending",
+    "appliance": "Appliances",
+    "electronic": "Electronics",
+    "electrical": "Electrical"
   },
   "register": {
     "title": "Welcome",
