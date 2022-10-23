@@ -44,6 +44,12 @@ export interface IArticle {
   timestamp?: number;
   onPress?: (event?: any) => void;
 }
+export interface ILocation {
+  id?: number;
+  location?: string;
+  landmark?: string;
+  city?: string;
+}
 
 export interface IProduct {
   id?: number;

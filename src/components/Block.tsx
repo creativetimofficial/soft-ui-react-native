@@ -71,6 +71,7 @@ const Block = (props: IBlockProps) => {
     bottom,
     end,
     start,
+    shoeb,
     ...rest
   } = props;
   const {colors, sizes} = useTheme();

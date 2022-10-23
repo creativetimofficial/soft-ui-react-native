@@ -67,6 +67,7 @@ const Button = ({
   haptic = true,
   vibrate,
   vibrateRepeat,
+  icon,
   onPress,
   ...props
 }: IButtonProps) => {
@@ -165,6 +166,12 @@ const Button = ({
       ...(left !== undefined && {left}),
       ...(top !== undefined && {top}),
       ...(bottom !== undefined && {bottom}),
+      ...(icon && {
+        backgroundColor: colors.primary,
+        width: sizes.socialSize,
+        height: sizes.socialSize,
+        borderRadius: sizes.socialRadius,
+      }),
     },
   ]) as ViewStyle;
 
@@ -238,7 +245,7 @@ const Button = ({
         ? 'logo-facebook'
         : social === 'twitter'
         ? 'logo-twitter'
-        : 'logo-dribbble';
+        : 'add';
 
     return (
       <TouchableOpacity
@@ -249,6 +256,24 @@ const Button = ({
         style={buttonStyles}>
         <Ionicons
           name={socialIcon}
+          size={sizes.socialIconSize}
+          color={colors.white}
+        />
+      </TouchableOpacity>
+    );
+  }
+
+  if (icon) {
+    
+    return (
+      <TouchableOpacity
+        {...buttonID}
+        activeOpacity={activeOpacity}
+        onPress={handlePress}
+        {...props}
+        style={buttonStyles}>
+        <Ionicons
+          name={icon}
           size={sizes.socialIconSize}
           color={colors.white}
         />

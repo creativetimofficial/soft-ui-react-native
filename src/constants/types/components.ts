@@ -426,6 +426,12 @@ export interface IButtonProps extends TouchableOpacityProps, ISpacing {
    * @see https://reactnative.dev/docs/vibration
    */
   vibrateRepeat?: boolean | null;
+   /**
+   * Renders social icons ('logo-facebook', 'logo-twitter', 'logo-dribbble') from Ionicons
+   * @see https://docs.expo.io/guides/icons/
+   * @see https://icons.expo.fyi
+   */
+    icon?: 'add' | 'school';
   /**
    * Renders Button content
    */

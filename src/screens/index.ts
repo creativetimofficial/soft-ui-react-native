@@ -11,7 +11,7 @@ export {default as Privacy} from './Pro';
 export {default as Profile} from './Profile';
 export {default as Register} from './Register';
 export {default as Login} from './Login';
-export {default as Location} from './Location'
+export {default as Locations} from './Locations'
 export {default as Rental} from './Pro';
 export {default as Rentals} from './Pro';
 export {default as Booking} from './Pro';
