@@ -220,6 +220,7 @@ export interface ThemeIcons {
   clock: ImageSourcePropType;
   close: ImageSourcePropType;
   components: ImageSourcePropType;
+  quantity: ImageSourcePropType;
   document: ImageSourcePropType;
   documentation: ImageSourcePropType;
   extras: ImageSourcePropType;

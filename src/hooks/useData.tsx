@@ -16,6 +16,7 @@ import {
   TRENDING,
   CATEGORIES,
   ARTICLES,
+  RECENTLY_ADDED,
 } from '../constants/mocks';
 import {light} from '../constants';
 
@@ -26,6 +27,7 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
   const [theme, setTheme] = useState<ITheme>(light);
   const [user, setUser] = useState<IUser>(USERS[0]);
   const [users, setUsers] = useState<IUser[]>(USERS);
+  const [recentlyAdded, setRecentlyAdded] = useState<IProduct[]>(RECENTLY_ADDED);
   const [following, setFollowing] = useState<IProduct[]>(FOLLOWING);
   const [trending, setTrending] = useState<IProduct[]>(TRENDING);
   const [categories, setCategories] = useState<ICategory[]>(CATEGORIES);
@@ -106,6 +108,8 @@ export const DataProvider = ({children}: {children: React.ReactNode}) => {
     users,
     handleUsers,
     handleUser,
+    recentlyAdded,
+    setRecentlyAdded,
     following,
     setFollowing,
     trending,

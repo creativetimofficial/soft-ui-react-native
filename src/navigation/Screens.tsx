@@ -1,7 +1,7 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Articles, Components, Home, Profile, Register, Login, Locations} from '../screens';
+import {Articles, Components, Home, Profile, Register, Login, Locations, AddLocation} from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
 const Stack = createStackNavigator();
@@ -41,16 +41,25 @@ export default () => {
         component={Register}
         options={{headerShown: false}}
       />
-       <Stack.Screen
-        name="Login"
-        component={Login}
-        options={{headerShown: false}}
-      />
       <Stack.Screen
         name="Locations"
         component={Locations}
         options={{headerShown: true}}
       />
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen 
+        name="AddLocation" 
+        component={AddLocation} 
+        options={{ 
+                  headerShown: true,  
+                  title: t('navigation.addlocation') 
+                }} 
+      /> 
+      
     </Stack.Navigator>
   );
 };

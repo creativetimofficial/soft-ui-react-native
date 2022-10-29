@@ -5,9 +5,9 @@ import {useNavigation} from '@react-navigation/core';
 import {useData, useTheme, useTranslation} from '../hooks';
 import * as regex from '../constants/regex';
 import {Block, Button, Input, Image, Text, Checkbox, Location} from '../components';
-import Login from './Login';
 
 const isAndroid = Platform.OS === 'android';
+
 
 interface IRegistration {
   name: string;
@@ -73,7 +73,7 @@ const Locations = () => {
     { id: 4, location: 'Flat 402', landmark: 'Blenheim Center', city: 'Hounslow'},
     { id: 5, location: 'B3 4', landmark: 'Bramha Estate', city: 'Pune'},
     { id: 6, location: 'A6 13', landmark: 'Bramha Estate', city: 'Pune'},
-    { id: 7, location: '401', landmark: 'VTP Pegasus', city: 'Pune'}
+    { id: 7, location: '401', landmark: 'VTP Pegasus', city: 'Pune'},
   ]
 
   return (
@@ -93,13 +93,11 @@ const Locations = () => {
                 />
                 <Button 
                     position="absolute" 
-                    right={sizes.s} 
+                    right={sizes.s}
                     bottom={sizes.xxl}
                     round
                     icon="add"
-                    onPress={() =>
-                        navigation.navigate('Login')
-                      }/> 
+                    onPress={() => navigation.navigate('AddLocation')}/> 
         </Block>
     </Block>
   );
