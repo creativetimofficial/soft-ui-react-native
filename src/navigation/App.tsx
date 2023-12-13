@@ -1,9 +1,11 @@
 import React, {useEffect} from 'react';
 import {Platform, StatusBar} from 'react-native';
+import { Provider } from "react-redux";
 import {useFonts} from 'expo-font';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import * as SplashScreen from 'expo-splash-screen';
 import Menu from './Menu';
+import { store } from '../redux/store';
 import {useData, ThemeProvider, TranslationProvider} from '../hooks';
 
 // Keep the splash screen visible while we fetch resources
@@ -56,11 +58,13 @@ export default () => {
 
   return (
     <TranslationProvider>
+      <Provider store={store}>
       <ThemeProvider theme={theme} setTheme={setTheme}>
         <NavigationContainer theme={navigationTheme}>
           <Menu />
         </NavigationContainer>
       </ThemeProvider>
+      </Provider>
     </TranslationProvider>
   );
 };

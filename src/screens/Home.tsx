@@ -1,7 +1,13 @@
-import React, {useCallback, useState} from 'react';
+import React, {useCallback, useEffect, useState} from 'react';
 
 import {useData, useTheme, useTranslation} from '../hooks/';
 import {Block, Button, Image, Input, Product, Text} from '../components/';
+import Client from 'shopify-buy';
+
+const client = Client.buildClient({
+  domain: 'theminies.com',
+  storefrontAccessToken: '8edcdfea78861730d03683c3a6474fa1',
+});
 
 const Home = () => {
   const {t} = useTranslation();
@@ -17,7 +23,6 @@ const Home = () => {
     },
     [following, trending, setTab, setProducts],
   );
-
   return (
     <Block>
       {/* search input */}
@@ -26,7 +31,7 @@ const Home = () => {
       </Block>
 
       {/* toggle products list */}
-      <Block
+      {/* <Block
         row
         flex={0}
         align="center"
@@ -80,10 +85,10 @@ const Home = () => {
             </Text>
           </Block>
         </Button>
-      </Block>
+      </Block> */}
 
       {/* products list */}
-      <Block
+      {/* <Block
         scroll
         paddingHorizontal={sizes.padding}
         showsVerticalScrollIndicator={false}
@@ -93,7 +98,7 @@ const Home = () => {
             <Product {...product} key={`card-${product?.id}`} />
           ))}
         </Block>
-      </Block>
+      </Block> */}
     </Block>
   );
 };
