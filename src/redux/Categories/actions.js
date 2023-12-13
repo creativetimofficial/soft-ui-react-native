@@ -1,6 +1,5 @@
 import types from './types'
 import ShopifyAPI from '@services/ShopifyAPI';
-import {warn} from "@app/Omni"
 
 export default {
   switchDisplayMode: (mode) => {

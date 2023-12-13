@@ -1,7 +1,6 @@
 import types from './types'
 import {flatten, pickBy, identity} from 'lodash'
 import {HorizonLayouts} from "@common";
-import {warn} from '@app/Omni'
 import {REHYDRATE} from 'redux-persist'
 
 const initialState = HorizonLayouts;

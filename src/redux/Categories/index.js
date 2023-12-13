@@ -1,12 +1,11 @@
-import {Constants} from "@common"
-import types from './types'
-import actions from './actions'
-import {warn} from "@app/Omni"
+// import { Constants } from "@common";
+import types from './types';
+import actions from './actions';
 
 export const DisplayMode = {
   ListMode: 'ListMode',
   GridMode: 'GridMode',
-  CardMode: 'CardMode'
+  CardMode: 'CardMode',
 };
 
 const initialState = {
@@ -18,7 +17,7 @@ const initialState = {
   selectedCategory: null,
 };
 
-export {actions}
+export {actions};
 
 export default (state = initialState, action) => {
   const {type, mode, error, items, category} = action;
@@ -27,7 +26,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         isFetching: true,
-        error: null
+        error: null,
       };
     }
     case types.FETCH_CATEGORIES_SUCCESS: {
@@ -35,7 +34,7 @@ export default (state = initialState, action) => {
         ...state,
         isFetching: false,
         list: items || [],
-        error: null
+        error: null,
       };
     }
     case types.FETCH_CATEGORIES_FAILURE: {
@@ -43,7 +42,7 @@ export default (state = initialState, action) => {
         ...state,
         isFetching: false,
         list: [],
-        error: error
+        error: error,
       };
     }
     case types.SWITCH_DISPLAY_MODE: {
@@ -72,4 +71,3 @@ export default (state = initialState, action) => {
     }
   }
 };
-
