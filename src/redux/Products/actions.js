@@ -5,7 +5,6 @@ import { Languages } from '@common';
 const actions = {
   fetchProductsByCategoryId: async (dispatch, categoryId, per_page, page, filter = null) => {
     // dispatch({type: types.FETCH_PRODUCTS_PENDING});
-
     const json = await ShopifyAPI.productsByCategoryId(categoryId, per_page, page, filter);
     if (json === undefined) {
       dispatch(actions.fetchProductsFailure('Can\'t get data from server'));

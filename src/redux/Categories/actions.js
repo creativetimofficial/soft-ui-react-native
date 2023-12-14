@@ -1,4 +1,4 @@
-import types from './types'
+import types from './types';
 import ShopifyAPI from '@services/ShopifyAPI';
 
 export default {
@@ -15,9 +15,12 @@ export default {
   fetchCategories: async (dispatch) => {
     dispatch({type: types.FETCH_CATEGORIES_PENDING});
     const items = await ShopifyAPI.getCategories();
-    
+
     if (items === undefined) {
-      dispatch({type: types.FETCH_CATEGORIES_FAILURE, error: 'Can\'t get data from server'})
+      dispatch({
+        type: types.FETCH_CATEGORIES_FAILURE,
+        error: "Can't get data from server",
+      });
     } else if (items.code) {
       dispatch({type: types.FETCH_CATEGORIES_FAILURE, error: items.message});
     } else {

@@ -1,7 +1,15 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import {Articles, Components, Home, Profile, Register, Pro} from '../screens';
+import {
+  Articles,
+  Components,
+  CategoryInfo,
+  Home,
+  Profile,
+  Register,
+  Pro,
+} from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
 const Stack = createStackNavigator();
@@ -17,7 +25,11 @@ export default () => {
         component={Home}
         options={{title: t('navigation.home')}}
       />
-
+      <Stack.Screen
+        name="CategoryInfo"
+        component={CategoryInfo}
+        // options={screenOptions.components}
+      />
       <Stack.Screen
         name="Components"
         component={Components}

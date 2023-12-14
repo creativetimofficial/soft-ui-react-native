@@ -1,0 +1,86 @@
+[
+  {
+    "name": "UniSex",
+    "handle": "unisex",
+    "children": [
+      {
+        "name": "T-Shirts",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      },
+      {
+        "name": "T-Shirts",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      },
+      {
+        "name": "T-Shirts",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      }
+    ]
+  },
+  {
+    "name": "Men's Wear",
+    "handle": "mens-wear",
+    "children": [
+      {
+        "name": "V Neck Tshirt",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      },
+      {
+        "name": "T-Shirts",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      },
+      {
+        "name": "T-Shirts",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      }
+    ]
+  },
+  {
+    "name": "WoMen's Wear",
+    "handle": "womens-wear",
+    "children": [
+      {
+        "name": "V Neck Tshirt",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      },
+      {
+        "name": "T-Shirts",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      },
+      {
+        "name": "T-Shirts",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      }
+    ]
+  },
+  {
+    "name": "Kids's Wear",
+    "handle": "kids-wear",
+    "children": [
+      {
+        "name": "V Neck Tshirt",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      },
+      {
+        "name": "T-Shirts",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      },
+      {
+        "name": "T-Shirts",
+        "id": "gid://shopify/Collection/284540698816",
+        "handle": "Oversized Hooded Sweatshirts"
+      }
+    ]
+  }
+]

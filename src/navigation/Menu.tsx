@@ -1,20 +1,22 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {Alert, Animated, Linking, StyleSheet} from 'react-native';
-
+import {Animated, Linking, StyleSheet, View} from 'react-native';
+import CategoriesApi from '../redux/Categories/actions';
+import {useDispatch, useSelector} from 'react-redux';
 import {
   useIsDrawerOpen,
   createDrawerNavigator,
-  DrawerContentComponentProps,
-  DrawerContentOptions,
+  // DrawerContentComponentProps,
+  // DrawerContentOptions,
   DrawerContentScrollView,
 } from '@react-navigation/drawer';
+import Collapsible from 'react-native-collapsible';
 
 import Screens from './Screens';
-import {Block, Text, Switch, Button, Image} from '../components';
-import {useData, useTheme, useTranslation} from '../hooks';
+import CustomCategories from './categories.json';
 
+import {Block, Text, Button, Image} from '../components';
+import {useTheme, useTranslation} from '../hooks';
 const Drawer = createDrawerNavigator();
-
 /* drawer menu screens navigation */
 const ScreensStack = () => {
   const {colors} = useTheme();
@@ -62,36 +64,37 @@ const ScreensStack = () => {
 };
 
 /* custom drawer menu */
-const DrawerContent = (
-  props: DrawerContentComponentProps<DrawerContentOptions>,
-) => {
-  const {navigation} = props;
+const DrawerContent = (props: any): React.ReactNode => {
+  const {navigation, categories, loading} = props;
+  const customCategoriesList = CustomCategories;
+  
+  
   const {t} = useTranslation();
-  const {isDark, handleIsDark} = useData();
+  // const {isDark, handleIsDark} = useData();
   const [active, setActive] = useState('Home');
   const {assets, colors, gradients, sizes} = useTheme();
   const labelColor = colors.text;
 
   const handleNavigation = useCallback(
-    (to) => {
+    (to: React.SetStateAction<string>, parmas: any) => {
       setActive(to);
-      navigation.navigate(to);
+      navigation.navigate(to, parmas);
     },
     [navigation, setActive],
   );
 
-  const handleWebLink = useCallback((url) => Linking.openURL(url), []);
+  // const handleWebLink = useCallback((url: string) => Linking.openURL(url), []);
 
   // screen list for Drawer menu
   const screens = [
     {name: t('screens.home'), to: 'Home', icon: assets.home},
-    {name: t('screens.components'), to: 'Components', icon: assets.components},
-    {name: t('screens.articles'), to: 'Articles', icon: assets.document},
-    {name: t('screens.rental'), to: 'Pro', icon: assets.rental},
-    {name: t('screens.profile'), to: 'Profile', icon: assets.profile},
-    {name: t('screens.settings'), to: 'Pro', icon: assets.settings},
-    {name: t('screens.register'), to: 'Register', icon: assets.register},
-    {name: t('screens.extra'), to: 'Pro', icon: assets.extras},
+    // {name: t('screens.components'), to: 'Components', icon: assets.components},
+    // {name: t('screens.articles'), to: 'Articles', icon: assets.document},
+    // {name: t('screens.rental'), to: 'Pro', icon: assets.rental},
+    // {name: t('screens.profile'), to: 'Profile', icon: assets.profile},
+    // {name: t('screens.settings'), to: 'Pro', icon: assets.settings},
+    // {name: t('screens.register'), to: 'Register', icon: assets.register},
+    // {name: t('screens.extra'), to: 'Pro', icon: assets.extras},
   ];
 
   return (
@@ -153,6 +156,51 @@ const DrawerContent = (
             </Button>
           );
         })}
+        {customCategoriesList.map((category, index) => {
+          return (
+            <View key={`menu-screen-${category.handle}-${index}`}>
+              <Button
+                row
+                justify="flex-start"
+                marginBottom={sizes.s}
+                onPress={() => {
+                  if (category.children) {
+                    if (active !== category.handle) {
+                      setActive(category.handle);
+                    }
+                  } else {
+                    handleNavigation('CategoryInfo', {category});
+                  }
+                }}>
+                <Text p color={labelColor}>
+                  {category.name}
+                </Text>
+              </Button>
+              {category.children ? (
+                <Collapsible collapsed={!(active === category.handle)}>
+                  <Block marginLeft={10}>
+                    {category.children.map((child, i) => {
+                      return (
+                        <Button
+                          key={`menu-screen-${child.handle}-${i}`}
+                          row
+                          justify="flex-start"
+                          marginBottom={sizes.s}
+                          onPress={() => {
+                            handleNavigation('CategoryInfo', {category: child});
+                          }}>
+                          <Text p color={labelColor}>
+                            {child.name}
+                          </Text>
+                        </Button>
+                      );
+                    })}
+                  </Block>
+                </Collapsible>
+              ) : null}
+            </View>
+          );
+        })}
 
         <Block
           flex={0}
@@ -182,8 +230,17 @@ const DrawerContent = (
 };
 
 /* drawer menu navigation */
-export default () => {
+const MenuDefault = (props: any) => {
   const {gradients} = useTheme();
+  const dispatch = useDispatch();
+  const categories = useSelector(
+    (state: {categories: any}) => state.categories,
+  );
+  const loading = categories.isFetching;
+  const categoriesList = categories.list;
+  useEffect(() => {
+    CategoriesApi.fetchCategories(dispatch);
+  }, []);
 
   return (
     <Block gradient={gradients.light}>
@@ -191,7 +248,13 @@ export default () => {
         drawerType="slide"
         overlayColor="transparent"
         sceneContainerStyle={{backgroundColor: 'transparent'}}
-        drawerContent={(props) => <DrawerContent {...props} />}
+        drawerContent={(props) => (
+          <DrawerContent
+            {...props}
+            categories={categoriesList}
+            loading={loading}
+          />
+        )}
         drawerStyle={{
           flex: 1,
           width: '60%',
@@ -203,3 +266,4 @@ export default () => {
     </Block>
   );
 };
+export default MenuDefault;

@@ -17,3 +17,4 @@ export {default as Booking} from './Pro';
 export {default as Settings} from './Pro';
 export {default as Shopping} from './Pro';
 export {default as Pro} from './Pro';
+export {default as CategoryInfo} from './CategoryInfo';
