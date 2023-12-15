@@ -1,12 +1,14 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 // import PropTypes from 'prop-types';
 import {View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import Text from './Text';
 import {Styles, Color, Constants} from '../common';
 // import {getProductImage} from '@app/Omni';
-// import {Rating} from '@components';
+import {Rating} from './Rating';
 import {FontAwesome} from '@expo/vector-icons';
 import {DisplayMode} from '../redux/Categories';
+import {currencyFormatter, getProductImage} from '../common/Omni';
 
 class ProductRow extends React.Component {
   constructor(props: any) {
@@ -51,8 +53,7 @@ class ProductRow extends React.Component {
           isListMode ? styles.container_list : styles.container_grid,
         ]}>
         <Image
-          // source={{uri: getProductImage(product.images[0], image_width)}}
-          source={{uri: product.images[0].src}}
+          source={{uri: getProductImage(product.images[0], image_width)}}
           style={[styles.image, imageStyle]}
           resizeMode="cover"
         />
@@ -75,32 +76,17 @@ class ProductRow extends React.Component {
               marginTop: 4,
             }}>
             <View style={[styles.price_wrapper, !isListMode && {marginTop: 0}]}>
-              <Text
-                style={[
-                  textStyle,
-                  styles.price,
-                  isCardMode && styles.cardPrice,
-                  !isListMode && {color: Color.blackTextSecondary},
-                ]}>
-                {product.price}
-                {/* {currencyFormatter(product.price) + ' '}  */}
-              </Text>
+              <Text>{currencyFormatter(product.price) + ' '}</Text>
 
-              <Text
-                style={[
-                  textStyle,
-                  styles.sale_price,
-                  isCardMode && styles.cardPriceSale,
-                ]}>
-                {product.regular_price}
-                {/* {product.on_sale
+              <Text>
+                {product.on_sale
                   ? currencyFormatter(product.regular_price)
-                  : ''}  */}
+                  : ''}
               </Text>
 
               {product.on_sale && (
                 <View style={styles.saleWrap}>
-                  <Text style={[textStyle, styles.sale_off]}>
+                  <Text>
                     {'-' +
                       (
                         (1 -
@@ -114,26 +100,17 @@ class ProductRow extends React.Component {
               )}
             </View>
 
-            {isListMode && (
-              <View style={styles.price_wrapper}>
-                <Rating
-                  rating={Number(product.average_rating)}
-                  size={
-                    (isListMode
-                      ? Styles.FontSize.medium
-                      : Styles.FontSize.small) + 5
-                  }
-                />
-                <Text
-                  style={[
-                    textStyle,
-                    styles.textRating,
-                    {color: Color.blackTextDisable},
-                  ]}>
-                  {'(' + product.rating_count + ')'}
-                </Text>
-              </View>
-            )}
+            <View style={styles.price_wrapper}>
+              <Rating
+                rating={Number(product.average_rating)}
+                size={
+                  (isListMode
+                    ? Styles.FontSize.medium
+                    : Styles.FontSize.small) + 5
+                }
+              />
+              <Text>{'(' + product.rating_count + ')'}</Text>
+            </View>
           </View>
         </View>
         {/**** add wish list ****/}
@@ -199,6 +176,7 @@ const styles = StyleSheet.create({
   },
   price_wrapper: {
     ...Styles.Common.Row,
+    marginTop: 10,
   },
   cardWraper: {
     flexDirection: 'column',

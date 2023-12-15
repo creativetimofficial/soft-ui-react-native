@@ -6,8 +6,7 @@ import CategoryPage from '../components/Category';
 const CategoryInfo = ({route, navigation}) => {
   //   const {t} = useTranslation();
   const {category} = route.params;
-  console.log('sadsad', route.params);
-
+  const {navigate} = navigation;
   useEffect(() => {
     // Update the header title based on the parameter
     navigation.setOptions({
@@ -17,7 +16,12 @@ const CategoryInfo = ({route, navigation}) => {
   // const {navigate, state} = this.props.navigation;
   return (
     <Block>
-      <CategoryPage category={category} />
+      <CategoryPage
+        category={category}
+        onViewProductScreen={(product: any) => {
+          navigate('ProductInfo', {product});
+        }}
+      />
     </Block>
   );
 };

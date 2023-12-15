@@ -9,6 +9,7 @@ import {
   Profile,
   Register,
   Pro,
+  ProductInfo,
 } from '../screens';
 import {useScreenOptions, useTranslation} from '../hooks';
 
@@ -30,6 +31,12 @@ export default () => {
         component={CategoryInfo}
         // options={screenOptions.components}
       />
+      <Stack.Screen
+        name="ProductInfo"
+        component={ProductInfo}
+        // options={screenOptions.components}
+      />
+      
       <Stack.Screen
         name="Components"
         component={Components}

@@ -8,7 +8,9 @@ import Checkbox from './Checkbox';
 import Image from './Image';
 import Article from './Article';
 import Product from './Product';
-
+import ScrollViewEx from './ScrollViewEx';
+import ProductSize from './ProductSize';
+import ProductColor from './ProductColor';
 export {
   Block,
   Button,
@@ -20,4 +22,7 @@ export {
   Article,
   Product,
   Modal,
+  ScrollViewEx,
+  ProductSize,
+  ProductColor,
 };

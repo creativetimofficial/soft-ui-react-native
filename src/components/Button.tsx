@@ -5,6 +5,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   Platform,
+  GestureResponderEvent,
 } from 'react-native';
 import {LinearGradient} from 'expo-linear-gradient';
 import {Ionicons} from '@expo/vector-icons';
@@ -170,7 +171,7 @@ const Button = ({
 
   /* handle onPress event */
   const handlePress = useCallback(
-    (event) => {
+    (event: GestureResponderEvent) => {
       onPress?.(event);
 
       /* vibrate onPress */

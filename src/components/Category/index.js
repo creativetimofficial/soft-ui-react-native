@@ -8,11 +8,12 @@ import {
   View,
 } from 'react-native';
 import {connect} from 'react-redux';
-import {Color, Styles} from '../../common';
-// import {Timer, toast, BlockTimer} from '@app/Omni';
+import {Color} from '../../common';
 import ProductRow from '../ProductRow';
 import {DisplayMode} from '@redux/Categories';
 import Text from '../Text';
+// import ControlBar from './ControlBar';
+// import SubCategoryPicker from '../SubCategoryPicker';
 
 const styles = StyleSheet.create({
   listView: {
@@ -62,22 +63,22 @@ class CategoryScreen extends React.Component {
     fetchProductsByCategoryId(category.id, this.pageNumber++);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   const props = this.props;
-  //   const {error} = nextProps.products;
-  //   if (error) {
-  //     console.log('error');
-  //   }
+  componentWillReceiveProps(nextProps) {
+    const props = this.props;
+    const {error} = nextProps.products;
+    if (error) {
+      console.log('error');
+    }
 
-  //   if (props.selectedCategory !== nextProps.selectedCategory) {
-  //     this.pageNumber = 1;
-  //     props.clearProducts();
-  //     props.fetchProductsByCategoryId(
-  //       nextProps.selectedCategory.id,
-  //       this.pageNumber++,
-  //     );
-  //   }
-  // }
+    if (props.selectedCategory !== nextProps.selectedCategory) {
+      this.pageNumber = 1;
+      props.clearProducts();
+      props.fetchProductsByCategoryId(
+        nextProps.selectedCategory.id,
+        this.pageNumber++,
+      );
+    }
+  }
 
   renderList(data) {
     const {products, displayMode} = this.props;
@@ -155,24 +156,22 @@ class CategoryScreen extends React.Component {
   }
 
   onRowClickHandle(product) {
-    // BlockTimer.execute(() => {
-    //   this.props.onViewProductScreen(product);
-    // }, 500);
+    this.props.onViewProductScreen(product);
   }
 
   onEndReached() {
-    // const { products, fetchProductsByCategoryId, selectedCategory } = this.props;
-    // if (!products.isFetching && products.stillFetch) {
-    //   fetchProductsByCategoryId(selectedCategory.id, this.pageNumber++);
-    // }
+    const { products, fetchProductsByCategoryId, selectedCategory } = this.props;
+    if (!products.isFetching && products.stillFetch) {
+      fetchProductsByCategoryId(selectedCategory.id, this.pageNumber++);
+    }
   }
 
   onRefreshHandle() {
-    // const { fetchProductsByCategoryId, clearProducts, selectedCategory } =
-    //   this.props;
-    // this.pageNumber = 1;
-    // clearProducts();
-    // fetchProductsByCategoryId(selectedCategory.id, this.pageNumber++);
+    const { fetchProductsByCategoryId, clearProducts, selectedCategory } =
+      this.props;
+    this.pageNumber = 1;
+    clearProducts();
+    fetchProductsByCategoryId(selectedCategory.id, this.pageNumber++);
   }
 
   onListViewScroll(event) {
@@ -180,7 +179,7 @@ class CategoryScreen extends React.Component {
   }
 
   render() {
-    // const { modalVisible, loadingBuffer, displayControlBar } = this.state;
+    const { modalVisible, loadingBuffer, displayControlBar } = this.state;
     const {products} = this.props;
     // const mainCategory = this.props.mainCategory;
     if (!products) {
@@ -203,7 +202,7 @@ class CategoryScreen extends React.Component {
             isVisible={displayControlBar}
             name={this.props.selectedCategory.name}
           />
-        </Animated.View>*/}
+        </Animated.View> */}
         {this.renderList(products.list)}
         {/* <SubCategoryPicker
           closeModal={this.closeCategoryPicker}

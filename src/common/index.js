@@ -29,3 +29,6 @@ export const Events = _Events;
 
 import _Device from './Device';
 export const Device = _Device;
+
+import _Omni from './Omni';
+export const Omni = _Omni;
