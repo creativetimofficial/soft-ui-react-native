@@ -93,7 +93,8 @@ const DrawerContent = (props: any): React.ReactNode => {
     // {name: t('screens.rental'), to: 'Pro', icon: assets.rental},
     // {name: t('screens.profile'), to: 'Profile', icon: assets.profile},
     // {name: t('screens.settings'), to: 'Pro', icon: assets.settings},
-    // {name: t('screens.register'), to: 'Register', icon: assets.register},
+    {name: t('screens.register'), to: 'Register', icon: assets.register},
+    {name: "Login", to: 'Login', icon: assets.register},
     // {name: t('screens.extra'), to: 'Pro', icon: assets.extras},
   ];
 
@@ -213,7 +214,6 @@ const DrawerContent = (props: any): React.ReactNode => {
         <Text semibold transform="uppercase" opacity={0.5}>
           {t('menu.documentation')}
         </Text>
-
         {/* <Block row justify="space-between" marginTop={sizes.sm}>
           <Text color={labelColor}>{t('darkMode')}</Text>
           <Switch

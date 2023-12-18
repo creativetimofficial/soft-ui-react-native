@@ -10,7 +10,7 @@ export {default as NotificationsSettings} from './Pro';
 export {default as Privacy} from './Pro';
 export {default as Profile} from './Profile';
 export {default as Register} from './Register';
-export {default as Login} from './Pro';
+export {default as Login} from './Login';
 export {default as Rental} from './Pro';
 export {default as Rentals} from './Pro';
 export {default as Booking} from './Pro';

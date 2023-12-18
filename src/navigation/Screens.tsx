@@ -8,6 +8,7 @@ import {
   Home,
   Profile,
   Register,
+  Login,
   Pro,
   ProductInfo,
 } from '../screens';
@@ -36,7 +37,7 @@ export default () => {
         component={ProductInfo}
         // options={screenOptions.components}
       />
-      
+
       <Stack.Screen
         name="Components"
         component={Components}
@@ -49,7 +50,7 @@ export default () => {
         options={{title: t('navigation.articles')}}
       />
 
-      <Stack.Screen name="Pro" component={Pro} options={screenOptions.pro} />
+      {/* <Stack.Screen name="Pro" component={Pro} options={screenOptions.pro} /> */}
 
       <Stack.Screen
         name="Profile"
@@ -60,6 +61,12 @@ export default () => {
       <Stack.Screen
         name="Register"
         component={Register}
+        options={{headerShown: false}}
+      />
+
+      <Stack.Screen
+        name="Login"
+        component={Login}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
