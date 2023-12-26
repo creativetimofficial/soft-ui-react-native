@@ -5,6 +5,7 @@ import {useNavigation} from '@react-navigation/core';
 import {useData, useTheme, useTranslation} from '../hooks/';
 import * as regex from '../constants/regex';
 import {Block, Button, Input, Image, Text, Checkbox} from '../components/';
+import GraphAPI from '../services/GraphAPI';
 
 const isAndroid = Platform.OS === 'android';
 
@@ -40,7 +41,7 @@ const Register = () => {
   const {assets, colors, gradients, sizes} = useTheme();
 
   const handleChange = useCallback(
-    (value) => {
+    (value: IRegistration) => {
       setRegistration((state) => ({...state, ...value}));
     },
     [setRegistration],
@@ -48,8 +49,7 @@ const Register = () => {
 
   const handleSignUp = useCallback(() => {
     if (!Object.values(isValid).includes(false)) {
-      /** send/save registratin data */
-      console.log('handleSignUp', registration);
+      GraphAPI.registerUser(registration);
     }
   }, [isValid, registration]);
 

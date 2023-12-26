@@ -6,6 +6,7 @@ import {
   ViewStyle,
   StyleSheet,
   Platform,
+  SafeAreaView,
 } from 'react-native';
 
 import Block from './Block';

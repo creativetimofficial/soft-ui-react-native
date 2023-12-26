@@ -2,7 +2,7 @@
 import {Constants} from '@common';
 import Client from 'shopify-buy';
 import {Category, Product, ProductSearch} from '@data';
-export const error = (values) => console.log('error -->> ',values);
+export const error = (values) => console.log('error -->> ', values);
 /**
  * https://shopify.github.io/js-buy-sdk
  */
@@ -190,6 +190,27 @@ const ShopifyAPI = {
       const responses = await Shopify.fetchNextPage(list);
 
       return responses.model.map((item) => new Product(item));
+    } catch (err) {
+      error(err);
+      console.log(err);
+    }
+  },
+  /** fetchNextPage
+   * @list: Array<GraphModel>
+   */
+  loginUser: async (data) => {
+    try {
+      // console.log(Shopify);
+      const productsQuery = Shopify.graphQLClient.query((root) => {
+        console.log(root);
+        root.addConnection('products', {args: {first: 10}}, (product) => {
+          product.add('title');
+        });
+      });
+      // console.log(productsQuery);
+      // const responses = await Shopify.customer.createCustomerAccessToken(data);
+      // console.log('login responses >> ', responses);
+      return null;
     } catch (err) {
       error(err);
       console.log(err);

@@ -182,7 +182,7 @@ const Block = (props: IBlockProps) => {
   if (keyboard) {
     return (
       <KeyboardAwareScrollView {...blockID} {...rest} style={blockStyles}>
-        {children}
+        <View>{children}</View>
       </KeyboardAwareScrollView>
     );
   }

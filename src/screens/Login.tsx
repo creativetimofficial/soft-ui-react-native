@@ -1,10 +1,13 @@
 import React, {useCallback, useEffect, useState} from 'react';
-import {Linking, Platform} from 'react-native';
+import {Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
 import {useData, useTheme, useTranslation} from '../hooks/';
 import * as regex from '../constants/regex';
-import {Block, Button, Input, Image, Text, Checkbox} from '../components/';
+import {Block, Button, Input, Image, Text} from '../components/';
+import ShopifyAPI from '../services/ShopifyAPI';
+import GraphAPI from '../services/GraphAPI';
+import {useToast} from 'react-native-toast-notifications';
 
 const isAndroid = Platform.OS === 'android';
 
@@ -18,8 +21,10 @@ interface ILoginValidation {
 }
 
 const Login = () => {
-  const {isDark} = useData();
+  // const {isDark} = useData();
   const {t} = useTranslation();
+  const toast = useToast();
+
   const navigation = useNavigation();
   const [isValid, setIsValid] = useState<ILoginValidation>({
     email: false,
@@ -29,21 +34,24 @@ const Login = () => {
     email: '',
     password: '',
   });
-  const {assets, colors, gradients, sizes} = useTheme();
+  const {assets, colors, sizes} = useTheme();
 
   const handleChange = useCallback(
-    (value: ILogin) => {
+    (value: any) => {
       setLogin((state) => ({...state, ...value}));
     },
     [setLogin],
   );
 
-  const handleSignIn = useCallback(() => {
+  const handleSignIn = useCallback(async () => {
     if (!Object.values(isValid).includes(false)) {
-      /** send/save registratin data */
-      console.log('handleSignIn', login);
+      let id = toast.show('Loading...');
+      const response = await GraphAPI.loginUser(login);
+      if (response.error) {
+        toast.update(id, response.error, {type: 'danger'});
+      }
     }
-  }, [isValid, login]);
+  }, [isValid, login, toast]);
 
   useEffect(() => {
     setIsValid((state) => ({
@@ -112,12 +120,12 @@ const Login = () => {
                   placeholder={t('common.emailPlaceholder')}
                   success={Boolean(login.email && isValid.email)}
                   danger={Boolean(login.email && !isValid.email)}
-                  onChangeText={(value) =>
+                  onChangeText={(value) => {
                     handleChange({
                       email: value,
-                      password: '',
-                    })
-                  }
+                      // password: '',
+                    });
+                  }}
                 />
                 <Input
                   secureTextEntry
@@ -128,7 +136,6 @@ const Login = () => {
                   onChangeText={(value) =>
                     handleChange({
                       password: value,
-                      email: '',
                     })
                   }
                   success={Boolean(login.password && isValid.password)}
@@ -141,7 +148,7 @@ const Login = () => {
                 shadow={!isAndroid}
                 marginVertical={sizes.s}
                 marginHorizontal={sizes.sm}
-                onPress={() => navigation.navigate('Pro')}>
+                onPress={handleSignIn}>
                 <Text bold primary transform="uppercase">
                   {t('common.signin')}
                 </Text>
