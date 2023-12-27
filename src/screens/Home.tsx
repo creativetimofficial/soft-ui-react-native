@@ -3,6 +3,7 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {useData, useTheme, useTranslation} from '../hooks/';
 import {Block, Button, Image, Input, Product, Text} from '../components/';
 import Client from 'shopify-buy';
+import {useSelector} from 'react-redux';
 
 const client = Client.buildClient({
   domain: 'theminies.com',
@@ -15,6 +16,9 @@ const Home = () => {
   const {following, trending} = useData();
   const [products, setProducts] = useState(following);
   const {assets, colors, fonts, gradients, sizes} = useTheme();
+
+  const state = useSelector((s) => s.user);
+  console.log({state});
 
   const handleProducts = useCallback(
     (tab: number) => {

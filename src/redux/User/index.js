@@ -1,20 +1,5 @@
-/**
- * Created by InspireUI on 14/02/2017.
- */
-
-const types = {
-  LOGOUT: 'LOGOUT',
-  LOGIN: 'LOGIN_SUCCESS',
-};
-
-export const actions = {
-  login: (user) => {
-    return {type: types.LOGIN, user};
-  },
-  logout(){
-    return {type: types.LOGOUT};
-  },
-};
+import types from './types';
+// import actions from './actions';
 
 const initialState = {
   user: null,

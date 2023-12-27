@@ -65,14 +65,15 @@ const ScreensStack = () => {
 
 /* custom drawer menu */
 const DrawerContent = (props: any): React.ReactNode => {
-  const {navigation, categories, loading} = props;
+  const {navigation, user, categories, loading} = props;
   const customCategoriesList = CustomCategories;
-  
-  
+  console.log('user >>>>>>>', user);
+
   const {t} = useTranslation();
   // const {isDark, handleIsDark} = useData();
   const [active, setActive] = useState('Home');
   const {assets, colors, gradients, sizes} = useTheme();
+  // const user = useSelector((s) => s.user.user);
   const labelColor = colors.text;
 
   const handleNavigation = useCallback(
@@ -84,8 +85,6 @@ const DrawerContent = (props: any): React.ReactNode => {
   );
 
   // const handleWebLink = useCallback((url: string) => Linking.openURL(url), []);
-
-  // screen list for Drawer menu
   const screens = [
     {name: t('screens.home'), to: 'Home', icon: assets.home},
     // {name: t('screens.components'), to: 'Components', icon: assets.components},
@@ -94,7 +93,7 @@ const DrawerContent = (props: any): React.ReactNode => {
     // {name: t('screens.profile'), to: 'Profile', icon: assets.profile},
     // {name: t('screens.settings'), to: 'Pro', icon: assets.settings},
     {name: t('screens.register'), to: 'Register', icon: assets.register},
-    {name: "Login", to: 'Login', icon: assets.register},
+    {name: 'Login', to: 'Login', icon: assets.register},
     // {name: t('screens.extra'), to: 'Pro', icon: assets.extras},
   ];
 
@@ -105,8 +104,8 @@ const DrawerContent = (props: any): React.ReactNode => {
       removeClippedSubviews
       renderToHardwareTextureAndroid
       contentContainerStyle={{paddingBottom: sizes.padding}}>
-      <Block paddingHorizontal={sizes.padding}>
-        <Block flex={0} row align="center" marginBottom={sizes.l}>
+      <Block paddingHorizontal={sizes.padding} paddingVertical={20}>
+        <Block flex={0} align="center" marginBottom={sizes.l}>
           <Image
             radius={0}
             width={33}
@@ -115,16 +114,35 @@ const DrawerContent = (props: any): React.ReactNode => {
             source={assets.logo}
             marginRight={sizes.sm}
           />
-          <Block>
-            <Text size={12} semibold>
-              {t('app.name')}
-            </Text>
-            <Text size={12} semibold>
-              {t('app.native')}
-            </Text>
-          </Block>
+          {user?.user ? (
+            <Block>
+              <Text size={12} semibold>
+                {user.user.displayName}
+              </Text>
+              <Text size={12} semibold>
+                {user.user.email}
+              </Text>
+              <Text size={12} semibold>
+                {user.user.phone}
+              </Text>
+            </Block>
+          ) : (
+            <Block>
+              <Text size={12} semibold>
+                Login
+              </Text>
+              <Text size={12} semibold>
+                Signup
+              </Text>
+            </Block>
+          )}
         </Block>
-
+        <Block
+          flex={0}
+          height={1}
+          marginRight={sizes.md}
+          gradient={gradients.menu}
+        />
         {screens?.map((screen, index) => {
           const isActive = active === screen.to;
           return (
@@ -214,16 +232,10 @@ const DrawerContent = (props: any): React.ReactNode => {
         <Text semibold transform="uppercase" opacity={0.5}>
           {t('menu.documentation')}
         </Text>
-        {/* <Block row justify="space-between" marginTop={sizes.sm}>
-          <Text color={labelColor}>{t('darkMode')}</Text>
-          <Switch
-            checked={isDark}
-            onPress={(checked) => {
-              handleIsDark(checked);
-              Alert.alert(t('pro.title'), t('pro.alert'));
-            }}
-          />
-        </Block> */}
+
+        <Block row justify="space-between" marginTop={sizes.sm}>
+          <Text color={labelColor}>Logout</Text>
+        </Block>
       </Block>
     </DrawerContentScrollView>
   );
@@ -236,6 +248,7 @@ const MenuDefault = (props: any) => {
   const categories = useSelector(
     (state: {categories: any}) => state.categories,
   );
+  const user = useSelector((state: {user: any}) => state.user);
   const loading = categories.isFetching;
   const categoriesList = categories.list;
   useEffect(() => {
@@ -252,6 +265,7 @@ const MenuDefault = (props: any) => {
           <DrawerContent
             {...props}
             categories={categoriesList}
+            user={user}
             loading={loading}
           />
         )}

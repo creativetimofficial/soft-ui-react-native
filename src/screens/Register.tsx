@@ -2,38 +2,43 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {Linking, Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
-import {useData, useTheme, useTranslation} from '../hooks/';
+import {useTheme, useTranslation} from '../hooks/';
 import * as regex from '../constants/regex';
 import {Block, Button, Input, Image, Text, Checkbox} from '../components/';
 import GraphAPI from '../services/GraphAPI';
-
+import {useToast} from 'react-native-toast-notifications';
 const isAndroid = Platform.OS === 'android';
 
 interface IRegistration {
-  name: string;
+  firstName: string;
+  lastName: string;
   email: string;
   password: string;
   agreed: boolean;
 }
 interface IRegistrationValidation {
-  name: boolean;
+  firstName: boolean;
+  lastName: boolean;
   email: boolean;
   password: boolean;
   agreed: boolean;
 }
 
 const Register = () => {
-  const {isDark} = useData();
+  // const {isDark} = useData();
   const {t} = useTranslation();
+  const toast = useToast();
   const navigation = useNavigation();
   const [isValid, setIsValid] = useState<IRegistrationValidation>({
-    name: false,
+    firstName: false,
+    lastName: false,
     email: false,
     password: false,
     agreed: false,
   });
   const [registration, setRegistration] = useState<IRegistration>({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
     agreed: false,
@@ -47,16 +52,23 @@ const Register = () => {
     [setRegistration],
   );
 
-  const handleSignUp = useCallback(() => {
+  const handleSignUp = useCallback(async () => {
     if (!Object.values(isValid).includes(false)) {
-      GraphAPI.registerUser(registration);
+      let id = toast.show('Loading...');
+      const response = await GraphAPI.registerUser(registration);
+      if (response.error) {
+        toast.update(id, response.error, {type: 'danger'});
+      } else {
+        toast.update(id, 'Registration successful.', {type: 'success'});
+      }
     }
-  }, [isValid, registration]);
+  }, [isValid, registration, toast]);
 
   useEffect(() => {
     setIsValid((state) => ({
       ...state,
-      name: regex.name.test(registration.name),
+      firstName: regex.name.test(registration.firstName),
+      lastName: regex.name.test(registration.lastName),
       email: regex.email.test(registration.email),
       password: regex.password.test(registration.password),
       agreed: registration.agreed,
@@ -117,11 +129,20 @@ const Register = () => {
                 <Input
                   autoCapitalize="none"
                   marginBottom={sizes.m}
-                  label={t('common.name')}
-                  placeholder={t('common.namePlaceholder')}
-                  success={Boolean(registration.name && isValid.name)}
-                  danger={Boolean(registration.name && !isValid.name)}
-                  onChangeText={(value) => handleChange({name: value})}
+                  label={t('common.firstName')}
+                  placeholder={t('common.firstNamePlaceholder')}
+                  success={Boolean(registration.firstName && isValid.firstName)}
+                  danger={Boolean(registration.firstName && !isValid.firstName)}
+                  onChangeText={(value) => handleChange({firstName: value})}
+                />
+                <Input
+                  autoCapitalize="none"
+                  marginBottom={sizes.m}
+                  label={t('common.lastName')}
+                  placeholder={t('common.lastNamePlaceholder')}
+                  success={Boolean(registration.lastName && isValid.lastName)}
+                  danger={Boolean(registration.lastName && !isValid.lastName)}
+                  onChangeText={(value) => handleChange({lastName: value})}
                 />
                 <Input
                   autoCapitalize="none"

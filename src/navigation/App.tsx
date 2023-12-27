@@ -1,12 +1,14 @@
 import React, {useEffect} from 'react';
 import {Platform, StatusBar} from 'react-native';
-import { Provider } from "react-redux";
+import {Provider} from 'react-redux';
 import {useFonts} from 'expo-font';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import * as SplashScreen from 'expo-splash-screen';
 import Menu from './Menu';
-import { store } from '../redux/store';
+import {store} from '../redux/store';
 import {useData, ThemeProvider, TranslationProvider} from '../hooks';
+import GraphAPI from '../services/GraphAPI';
 
 // Keep the splash screen visible while we fetch resources
 SplashScreen.preventAutoHideAsync();
@@ -21,6 +23,19 @@ export default () => {
       StatusBar.setBarStyle('default');
     };
   }, [isDark]);
+  const checkUser = async () => {
+    const customerAccesstoken = await AsyncStorage.getItem(
+      'customerAccesstoken',
+    );
+    console.log('customerAccesstoken-----------', customerAccesstoken);
+    if (customerAccesstoken) {
+      GraphAPI.getUserByToken(customerAccesstoken, store.dispatch);
+    }
+  };
+  useEffect(() => {
+    console.log('<<<<<<<<<<');
+    checkUser();
+  }, []);
 
   // load custom fonts
   const [fontsLoaded] = useFonts({
@@ -59,11 +74,11 @@ export default () => {
   return (
     <TranslationProvider>
       <Provider store={store}>
-      <ThemeProvider theme={theme} setTheme={setTheme}>
-        <NavigationContainer theme={navigationTheme}>
-          <Menu />
-        </NavigationContainer>
-      </ThemeProvider>
+        <ThemeProvider theme={theme} setTheme={setTheme}>
+          <NavigationContainer theme={navigationTheme}>
+            <Menu />
+          </NavigationContainer>
+        </ThemeProvider>
       </Provider>
     </TranslationProvider>
   );

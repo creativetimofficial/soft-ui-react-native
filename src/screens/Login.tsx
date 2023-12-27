@@ -2,12 +2,14 @@ import React, {useCallback, useEffect, useState} from 'react';
 import {Platform} from 'react-native';
 import {useNavigation} from '@react-navigation/core';
 
-import {useData, useTheme, useTranslation} from '../hooks/';
+import {useTheme, useTranslation} from '../hooks/';
 import * as regex from '../constants/regex';
 import {Block, Button, Input, Image, Text} from '../components/';
-import ShopifyAPI from '../services/ShopifyAPI';
+// import ShopifyAPI from '../services/ShopifyAPI';
 import GraphAPI from '../services/GraphAPI';
 import {useToast} from 'react-native-toast-notifications';
+import {useDispatch, useSelector} from 'react-redux';
+// import {getElementsByTagType} from '../components/HTMLView/vendor/htmlparser2';
 
 const isAndroid = Platform.OS === 'android';
 
@@ -24,6 +26,9 @@ const Login = () => {
   // const {isDark} = useData();
   const {t} = useTranslation();
   const toast = useToast();
+  const dispatch = useDispatch();
+  // const state = useSelector((s) => s);
+  // console.log({state});
 
   const navigation = useNavigation();
   const [isValid, setIsValid] = useState<ILoginValidation>({
@@ -46,9 +51,11 @@ const Login = () => {
   const handleSignIn = useCallback(async () => {
     if (!Object.values(isValid).includes(false)) {
       let id = toast.show('Loading...');
-      const response = await GraphAPI.loginUser(login);
+      const response = await GraphAPI.loginUser(login, dispatch);
       if (response.error) {
         toast.update(id, response.error, {type: 'danger'});
+      } else {
+        toast.update(id, response.success, {type: 'success'});
       }
     }
   }, [isValid, login, toast]);
