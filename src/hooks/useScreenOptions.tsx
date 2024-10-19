@@ -35,7 +35,7 @@ export default () => {
     ),
     headerLeft: () => (
       <Button onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-        <Image source={icons.menu} radius={0} color={colors.icon} />
+        <Image source={icons.menu} radius={0} color={colors.icon} marginRight={20} marginLeft={10} />
       </Button>
     ),
     headerRight: () => (
@@ -98,7 +98,7 @@ export default () => {
       headerLeft: () => (
         <Button
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-          <Image source={icons.menu} radius={0} color={colors.white} />
+          <Image source={icons.menu} radius={0} color={colors.white} marginRight={20} marginLeft={10} />
         </Button>
       ),
     },
@@ -114,7 +114,7 @@ export default () => {
       headerLeft: () => (
         <Button
           onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-          <Image source={icons.menu} radius={0} color={colors.white} />
+          <Image source={icons.menu} radius={0} color={colors.white} marginRight={20} marginLeft={10} />
         </Button>
       ),
     },

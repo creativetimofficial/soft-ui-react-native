@@ -1,5 +1,5 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {Alert, Animated, Linking, StyleSheet} from 'react-native';
+import {Alert, Animated, Linking, StyleSheet, Dimensions} from 'react-native';
 
 import {
   useDrawerStatus,
@@ -30,9 +30,20 @@ const ScreensStack = () => {
     outputRange: [0, 16],
   });
 
+  // Get the screen width
+  const { width: screenWidth } = Dimensions.get('window');
+
+  const translateX = animation.interpolate({
+    inputRange: [0, 1],
+    outputRange: [0, (screenWidth * 0.6)],
+  });
+
   const animatedStyle = {
     borderRadius: borderRadius,
-    transform: [{scale: scale}],
+    transform: [
+      {scale: scale},
+      { translateX: translateX }, // Sliding effect
+    ],
   };
 
   useEffect(() => {
@@ -218,16 +229,25 @@ export default () => {
     <Block gradient={gradients.light}>
       <Drawer.Navigator
         drawerType="slide"
-        overlayColor="transparent"
-        sceneContainerStyle={{backgroundColor: 'transparent'}}
         drawerContent={(props) => <DrawerContent {...props} />}
-        drawerStyle={{
-          flex: 1,
-          width: '60%',
-          borderRightWidth: 0,
-          backgroundColor: 'transparent',
+        screenOptions={{
+          overlayColor: 'transparent',
+          swipeEnabled: false,
+          drawerStyle: {
+            flex: 1,
+            width: '60%',
+            borderRightWidth: 0,
+            backgroundColor: 'transparent',
+          },
+          sceneContainerStyle: {
+            backgroundColor: 'transparent',
+          },
         }}>
-        <Drawer.Screen name="Screens" component={ScreensStack} />
+        <Drawer.Screen
+          name="Screens"
+          component={ScreensStack}
+          options={{ headerShown: false }}
+        />
       </Drawer.Navigator>
     </Block>
   );
