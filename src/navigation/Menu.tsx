@@ -2,10 +2,9 @@ import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {Alert, Animated, Linking, StyleSheet} from 'react-native';
 
 import {
-  useIsDrawerOpen,
+  useDrawerStatus,
   createDrawerNavigator,
   DrawerContentComponentProps,
-  DrawerContentOptions,
   DrawerContentScrollView,
 } from '@react-navigation/drawer';
 
@@ -18,7 +17,7 @@ const Drawer = createDrawerNavigator();
 /* drawer menu screens navigation */
 const ScreensStack = () => {
   const {colors} = useTheme();
-  const isDrawerOpen = useIsDrawerOpen();
+  const isDrawerOpen = useDrawerStatus();
   const animation = useRef(new Animated.Value(0)).current;
 
   const scale = animation.interpolate({
@@ -40,7 +39,7 @@ const ScreensStack = () => {
     Animated.timing(animation, {
       duration: 200,
       useNativeDriver: true,
-      toValue: isDrawerOpen ? 1 : 0,
+      toValue: isDrawerOpen === 'open' ? 1 : 0,
     }).start();
   }, [isDrawerOpen, animation]);
 
@@ -52,7 +51,7 @@ const ScreensStack = () => {
           flex: 1,
           overflow: 'hidden',
           borderColor: colors.card,
-          borderWidth: isDrawerOpen ? 1 : 0,
+          borderWidth: isDrawerOpen === 'open' ? 1 : 0,
         },
       ])}>
       {/*  */}
@@ -63,7 +62,7 @@ const ScreensStack = () => {
 
 /* custom drawer menu */
 const DrawerContent = (
-  props: DrawerContentComponentProps<DrawerContentOptions>,
+  props: DrawerContentComponentProps,
 ) => {
   const {navigation} = props;
   const {t} = useTranslation();

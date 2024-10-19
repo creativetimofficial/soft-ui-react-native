@@ -2,7 +2,7 @@ import React, {useLayoutEffect, useState} from 'react';
 import {FlatList, TouchableOpacity} from 'react-native';
 
 import {useNavigation} from '@react-navigation/core';
-import {useHeaderHeight} from '@react-navigation/stack';
+import {useHeaderHeight} from '@react-navigation/elements';
 
 import {useTheme} from '../hooks/';
 import {Block, Button, Input, Image, Switch, Modal, Text} from '../components/';
