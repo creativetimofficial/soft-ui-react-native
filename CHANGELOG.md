@@ -1,3 +1,40 @@
+## [1.2.0] 2025-06-11
+
+### Major Updates
+- Updated React to version 19.0.0 from 17.0.2
+- Updated React Native to version 0.79.3 from 0.68.2
+- Updated Expo to version 53.0.11
+
+### Updated Dependencies
+- Updated @react-native-async-storage/async-storage to 2.1.2
+- Updated @react-navigation/drawer to 7.4.1
+- Updated @react-navigation/native to 7.1.10
+- Updated @react-navigation/stack to 7.3.3
+- Updated expo-blur to 14.1.5
+- Updated expo-constants to 17.1.6
+- Updated expo-haptics to 14.1.4
+- Updated expo-linear-gradient to 14.1.5
+- Updated expo-localization to 16.1.5
+- Updated expo-modules-core to 2.4.0
+- Updated expo-splash-screen to 0.30.9
+- Updated expo-status-bar to 2.2.3
+- Updated react-native-gesture-handler to ~2.24.0
+- Updated react-native-pager-view to 6.7.1
+- Updated react-native-reanimated to 3.17.5
+- Updated react-native-safe-area-context to 5.4.0
+- Updated react-native-screens to 4.11.1
+- Updated react-native-web to ^0.20.0
+
+### Development Dependencies
+- Updated @babel/core to 7.27.4
+- Updated TypeScript to 5.8.3
+- Updated @types/react to ~19.0.10
+- Updated ESLint to 8.57.1
+
+### Bug Fixes
+- Fixed navigation issues with nested navigators
+- Resolved deprecated API usage in React Navigation v7
+
 ## [1.1.0] 2023 - 08 - 10
 - dependencies updated
 - expo version updated
