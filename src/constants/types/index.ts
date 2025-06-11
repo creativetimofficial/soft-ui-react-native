@@ -1,4 +1,3 @@
-import i18n from 'i18n-js';
 import {ImageSourcePropType} from 'react-native';
 import {ITheme} from './theme';
 
@@ -89,8 +88,8 @@ export interface IUseData {
 export interface ITranslate {
   locale: string;
   setLocale: (locale?: string) => void;
-  t: (scope?: i18n.Scope, options?: i18n.TranslateOptions) => string;
-  translate: (scope?: i18n.Scope, options?: i18n.TranslateOptions) => string;
+  t: (scope?: string | string[], options?: object) => string;
+  translate: (scope?: string | string[], options?: object) => string;
 }
 export interface IExtra {
   id?: number;
